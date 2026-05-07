@@ -1,16 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <title>Radio Passport Problem</title>
     <script>
-      //need code here
+      function showFurtherDetails(value) {
+        const furtherDetails = document.querySelector(".furtherDetails");
+        if (value === "Yes") {
+          furtherDetails.style.display = "block";
+        } else {
+          furtherDetails.style.display = "none";
+        }
+      }
     </script>
     <style>
-      /* need code here */
+      .furtherDetails {
+        display: none;
+      }
     </style>
   </head>
   <body>
-    <!--need code here-->
+    <form action="#">
+      Do you have a passport?:
+      <input
+        type="radio"
+        id="yes"
+        name="passport"
+        value="Yes"
+        onclick="showFurtherDetails(this.value)"
+      />
+      <label for="yes">Yes</label>
+      <input
+        type="radio"
+        id="no"
+        name="passport"
+        value="No"
+        onclick="showFurtherDetails(this.value)"
+      />
+      <label for="no">No</label>
+      <hr />
+      <div class="furtherDetails">
+        <label for="passportNumber">Passport Number: </label>
+        <input type="text" id="passportNumber" name="passportNumber" />
+      </div>
+    </form>
   </body>
 </html>
